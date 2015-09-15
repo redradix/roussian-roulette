@@ -7,10 +7,6 @@ var settings = {
 };
 var bot = new Bot(settings);
 
-var usersList = bot.users.members.map(function(user) {
-  return user.name;
-});
-
 var isChatMessage = function (message) {
   return message.type === 'message' && Boolean(message.text);
 };
@@ -26,6 +22,9 @@ var isMentioningRussianRoulette = function (message) {
 };
 
 var replyWithRussianRoulette = function (message) {
+  var usersList = bot.users.map(function(user) {
+    return user.name;
+  });
   var chosenOne = _.sample(usersList);
   var targetChannel;
   _.forEach(bot.channels, function(channel) {
