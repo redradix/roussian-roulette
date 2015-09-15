@@ -7,7 +7,9 @@ var settings = {
 };
 var bot = new Bot(settings);
 
-var usersList = ["aaron", "alytxu", "arturo", "carlos", "chema", "cynthia", "dgrijuela", "diana", "fuzzyalej", "jose", "juan", "julian", "linkrbot", "luis", "luisherrero", "miguel", "migueldelmazo", "roman", "russianroulette", "sara", "traductor", "werelax"];
+var usersList = bot.users.members.map(function(user) {
+  return user.name;
+});
 
 var isChatMessage = function (message) {
   return message.type === 'message' && Boolean(message.text);
