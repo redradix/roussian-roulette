@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^3.10.1",
     "slackbots": "^0.4.0"
   }
 }
