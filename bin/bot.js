@@ -25,11 +25,17 @@ var isMentioningRussianRoulette = function (message) {
 
 var replyWithRussianRoulette = function (message) {
   var chosenOne = _.sample(usersList);
-  bot.postMessageToChannel(message.channel, 'The choooooosen one has beeeeeeeen.... -> @' + chosenOne, {as_user: true});
+  var targetChannel;
+  _.forEach(bot.channels, function(channel) {
+    if(channel.id === message.channel) {
+      targetChannel = channel.name;
+    }
+  });
+  bot.postMessageToChannel(targetChannel, 'The choooooosen one has beeeeeeeen.... @' + chosenOne, {as_user: true});
 };
 
 bot.on('message', function(message) {
-  if (isChatMessage(message) && isChannelConversation(message) && isMentioningRussianRoulette(message)) {
+  if (isChatMessage(message) && isMentioningRussianRoulette(message)) {
     replyWithRussianRoulette(message);
   }
 });
