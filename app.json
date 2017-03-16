@@ -1,0 +1,8 @@
+{
+  "name": "Roussian Roulette",
+  "description": "Slack bot to select one user from a channel randomnly",
+  "repository": "https://github.com/redradix/roussian-roulette",
+  "env": {
+    "TOKEN": ""
+  }
+}

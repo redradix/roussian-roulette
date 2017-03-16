@@ -1,13 +1,10 @@
 {
   "name": "russianroulette",
   "version": "1.0.0",
-  "description": "slack bot to select one user",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "description": "Slack bot to select one user from a channel randomnly",
+  "main": "bot.js",
+  "author": "Daniel Grijuela",
+  "license": "MIT",
   "dependencies": {
     "lodash": "^3.10.1",
     "slackbots": "^0.4.0"
